@@ -167,8 +167,8 @@ class PaysonApi {
     protected $useTestEnvironment;
     protected $protocol = "https://%s";
 
-    const PAYSON_WWW_HOST = "www.payson.se";
-    const PAYSON_WWW_PAY_FORWARD_URL = "/paysecure/?token=%s";
+    const PAYSON_WWW_HOST = "checkout.payson.se";
+    const PAYSON_WWW_PAY_FORWARD_URL = "/payment/?token=%s";
     const PAYSON_API_ENDPOINT = "api.payson.se";
     const PAYSON_API_VERSION = "1.0";
     const PAYSON_API_PAY_ACTION = "Pay";

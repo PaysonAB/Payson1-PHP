@@ -88,7 +88,6 @@ $payData->setOrderItems($orderItems);
 //$constraints = array(FundingConstraint::BANK, FundingConstraint::CREDITCARD); // bank and card
 //$constraints = array(FundingConstraint::INVOICE); // only invoice
 //$constraints = array(FundingConstraint::BANK, FundingConstraint::CREDITCARD, FundingConstraint::INVOICE); // bank, card and invoice
-//$constraints = array(FundingConstraint::SMS); // only live environment. 
 $constraints = array(FundingConstraint::BANK); // only bank
 $payData->setFundingConstraints($constraints);
 

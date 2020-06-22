@@ -18,7 +18,6 @@ class PayData {
     protected $custom;
     protected $trackingId;
     protected $guaranteeOffered;
-    protected $feesPayer;
     protected $showReceiptPage;
     
 
@@ -78,10 +77,6 @@ class PayData {
 
     public function setCurrencyCode($currencyCode) {
         $this->currencyCode = $currencyCode;
-    }
-
-    public function setFeesPayer($feesPayer) {
-        $this->feesPayer = $feesPayer;
     }
 
     public function setOrderItems($items) {
@@ -181,10 +176,6 @@ class PayData {
 
         if (isset($this->trackingId)) {
             $output["trackingId"] = $this->trackingId;
-        }
-
-        if (isset($this->feesPayer)) {
-            $output["feesPayer"] = FeesPayer::ConstantToString($this->feesPayer);
         }
 
         if (isset($this->guaranteeOffered)) {

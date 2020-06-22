@@ -91,10 +91,6 @@ $payData->setOrderItems($orderItems);
 $constraints = array(FundingConstraint::BANK); // only bank
 $payData->setFundingConstraints($constraints);
 
-//Set the payer of Payson fees
-//Must be PRIMARYRECEIVER if using FundingConstraint::INVOICE
-$payData->setFeesPayer(FeesPayer::PRIMARYRECEIVER);
-
 // Set currency code
 $payData->setCurrencyCode(CurrencyCode::SEK);
 

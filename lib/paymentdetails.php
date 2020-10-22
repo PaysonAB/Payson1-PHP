@@ -24,6 +24,7 @@ class PaymentDetails {
     protected $shippingAddressCountry;
     protected $amount;
 
+
     public function __construct($responseData) {
         $this->orderItems = OrderItem::parseOrderItems($responseData);
         $this->receivers = Receiver::parseReceivers($responseData);

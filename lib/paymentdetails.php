@@ -22,6 +22,7 @@ class PaymentDetails {
     protected $shippingAddressPostalCode;
     protected $shippingAddressCity;
     protected $shippingAddressCountry;
+    protected $amount;
 
     public function __construct($responseData) {
         $this->orderItems = OrderItem::parseOrderItems($responseData);
@@ -61,7 +62,9 @@ class PaymentDetails {
         if (isset($responseData["shippingAddress.country"])) {
             $this->shippingAddressCountry = $responseData["shippingAddress.country"];
         }
-
+        if (isset($responseData["receiverList.receiver(0).amount"])){
+            $this->amount = $responseData["receiverList.receiver(0).amount"];
+        }
         if (isset($responseData["receiverFee"])) {
             $this->receiverFee = $responseData["receiverFee"];
         }
@@ -260,6 +263,13 @@ class PaymentDetails {
      */
     public function getShippingAddressCountry() {
         return $this->shippingAddressCountry;
+    }
+
+    /* Returns the amount (including VAT) to transfer to this recipient
+     * @return double
+     */
+    public function getAmount() {
+        return $this->amount;
     }
 
     /**
